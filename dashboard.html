@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <style>
+        /* Main Content Styles */
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        /* Stat Cards */
+        .stat-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .stat-card h3 {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .stat-card .change {
+            color: #28a745;
+            font-size: 14px;
+        }
+
+        .stat-card .more-link {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        /* Calendar Widget */
+        .calendar {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+
+        .calendar-day {
+            text-align: center;
+            padding: 5px;
+        }
+
+        .current-day {
+            background-color: #007bff;
+            color: white;
+            border-radius: 30%;
+            width: 80%;
+        }
+
+        /* Chart Section */
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .chart {
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .bar {
+            width: 30px;
+            background-color: #007bff;
+            margin: 0 5px;
+            transition: height 0.3s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .stat-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <ul class="sidebar-nav">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a href="orderManagement.html"><i class="fas fa-shopping-cart"></i><span>Order Management</span></a></li>
+            <li><a href="inventoryManagement.html"><i class="fas fa-box"></i><span>Inventory Management</span></a></li>
+            <li><a href="employeeManagement.html"><i class="fas fa-users"></i><span>Employee Management</span></a></li>
+            <li><a href="#"><i class="fas fa-heart"></i><span>Customer Relations</span></a></li>
+            <li><a href="#"><i class="fas fa-chart-bar"></i><span>Reports & Analytics</span></a></li>
+            <li><a href="#"><i class="fas fa-question-circle"></i><span>Help</span></a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="header">
+            <h1>Dashboard</h1>
+        </div>
+
+        <div class="stat-cards">
+            <div class="stat-card">
+                <a href="#" class="more-link">More</a>
+                <h3>Total Orders</h3>
+                <div class="number">110,120</div>
+                <div class="change">+24% increase</div>
+            </div>
+            <div class="stat-card">
+                <a href="#" class="more-link">More</a>
+                <h3>Revenue</h3>
+                <div class="number">$85,400</div>
+                <div class="change">+18% increase</div>
+            </div>
+            <div class="stat-card">
+                <a href="#" class="more-link">More</a>
+                <h3>Customers</h3>
+                <div class="number">24,380</div>
+                <div class="change">+12% increase</div>
+            </div>
+            <div class="stat-card">
+                <a href="#" class="more-link">More</a>
+                <h3>Products</h3>
+                <div class="number">1,450</div>
+                <div class="change">+8% increase</div>
+            </div>
+        </div>
+        <style>
+            .right-sidebar {
+                width: 300px;
+                position: fixed;
+                right: 0;
+                top: 0;
+                height: 100vh;
+                background-color: #f5f5f5;
+                padding: 20px;
+                border-left: 1px solid #ddd;
+            }
+
+            .calendar {
+                background: white;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                margin-top: 60px;
+            }
+
+            .main-content {
+                margin-right: 300px;
+            }
+        </style>
+        <div class="right-sidebar">
+            <div class="calendar">
+                <div class="calendar-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <button style="border: none; background: none; cursor: pointer;"><i class="fas fa-chevron-left"></i></button>
+                    <h3 style="margin: 0; font-size: 16px;">September 2023</h3>
+                    <button style="border: none; background: none; cursor: pointer;"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="calendar-grid" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; text-align: center;">
+                    <div class="calendar-day" style="font-size: 12px; color: #666;">Sun</div>
+                    <div class="calendar-day" style="font-size: 12px; color: #666;">Mon</div>
+                    <div class="calendar-day" style="font-size: 12px; color: #666;">Tue</div>
+                    <div class="calendar-day" style="font-size: 12px; color: #666;">Wed</div>
+                    <div class="calendar-day" style="font-size: 12px; color: #666;">Thu</div>
+                    <div class="calendar-day" style="font-size: 12px; color: #666;">Fri</div>
+                    <div class="calendar-day" style="font-size: 12px; color: #666;">Sat</div>
+                    <script>
+                        function generateCalendarDays() {
+                            const calendarGrid = document.querySelector('.calendar-grid');
+                            const today = new Date();
+                            const currentMonth = today.getMonth();
+                            const currentYear = today.getFullYear();
+                            const firstDay = new Date(currentYear, currentMonth, 1);
+                            const lastDay = new Date(currentYear, currentMonth + 1, 0);
+                            
+                            // Get last few days of previous month
+                            const prevMonthLastDay = new Date(currentYear, currentMonth, 0);
+                            const startPadding = firstDay.getDay();
+                            
+                            for (let i = startPadding - 1; i >= 0; i--) {
+                                const day = document.createElement('div');
+                                day.textContent = prevMonthLastDay.getDate() - i;
+                                day.style.color = '#ccc';
+                                calendarGrid.appendChild(day);
+                            }
+                            
+                            // Current month days
+                            for (let i = 1; i <= lastDay.getDate(); i++) {
+                                const day = document.createElement('div');
+                                day.textContent = i;
+                                if (i === today.getDate() && 
+                                    currentMonth === today.getMonth() && 
+                                    currentYear === today.getFullYear()) {
+                                    day.className = 'current-day';
+                                }
+                                calendarGrid.appendChild(day);
+                            }
+                            
+                            // Next month padding
+                            const endPadding = 42 - (startPadding + lastDay.getDate());
+                            for (let i = 1; i <= endPadding; i++) {
+                                const day = document.createElement('div');
+                                day.textContent = i;
+                                day.style.color = '#ccc';
+                                calendarGrid.appendChild(day);
+                            }
+                        }
+
+                        // Clear existing calendar days (after weekday headers)
+                        const calendarGrid = document.querySelector('.calendar-grid');
+                        while (calendarGrid.children.length > 7) {
+                            calendarGrid.removeChild(calendarGrid.lastChild);
+                        }
+                        
+                        generateCalendarDays();
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3>Monthly Sales</h3>
+            <div class="chart">
+                <div class="bar" style="height: 60%;" title="Jan: $60,000"></div>
+                <div class="bar" style="height: 75%;" title="Feb: $75,000"></div>
+                <div class="bar" style="height: 85%;" title="Mar: $85,000"></div>
+                <div class="bar" style="height: 70%;" title="Apr: $70,000"></div>
+                <div class="bar" style="height: 90%;" title="May: $90,000"></div>
+                <div class="bar" style="height: 95%;" title="Jun: $95,000"></div>
+                <div class="bar" style="height: 80%;" title="Jul: $80,000"></div>
+                <div class="bar" style="height: 85%;" title="Aug: $85,000"></div>
+                <div class="bar" style="height: 100%;" title="Sep: $100,000"></div>
+                <div class="bar" style="height: 90%;" title="Oct: $90,000"></div>
+                <div class="bar" style="height: 85%;" title="Nov: $85,000"></div>
+                <div class="bar" style="height: 95%;" title="Dec: $95,000"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

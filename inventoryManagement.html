@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <style>
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        .inventory-sections {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .inventory-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .inventory-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .inventory-section i {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .inventory-section h3 {
+            color: #333;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .inventory-sections {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <ul class="sidebar-nav">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a href="orderManagement.html"><i class="fas fa-shopping-cart"></i><span>Order Management</span></a></li>
+            <li><a href="inventoryManagement.html"><i class="fas fa-box"></i><span>Inventory Management</span></a></li>
+            <li><a href="#"><i class="fas fa-users"></i><span>Employee Management</span></a></li>
+            <li><a href="#"><i class="fas fa-heart"></i><span>Customer Relations</span></a></li>
+            <li><a href="#"><i class="fas fa-chart-bar"></i><span>Reports & Analytics</span></a></li>
+            <li><a href="#"><i class="fas fa-question-circle"></i><span>Help</span></a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="header">
+            <h1>Inventory Management</h1>
+        </div>
+
+        <div class="inventory-sections">
+            <div class="inventory-section">
+                <i class="fas fa-wallet"></i>
+                <h3>Pockets</h3>
+            </div>
+            <div class="inventory-section">
+                <i class="fas fa-tshirt"></i>
+                <h3>Collars</h3>
+            </div>
+            <div class="inventory-section">
+                <i class="fas fa-scroll"></i>
+                <h3>Fabrics</h3>
+            </div>
+            <div class="inventory-section">
+                <i class="fas fa-circle"></i>
+                <h3>Buttons</h3>
+            </div>
+            <div class="inventory-section">
+                <i class="fas fa-stream"></i>
+                <h3>Plackets</h3>
+            </div>
+            <div class="inventory-section">
+                <i class="fas fa-link"></i>
+                <h3>Cuffs</h3>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

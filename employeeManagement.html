@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <style>
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        .employee-list {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .employee-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .employee-item:last-child {
+            border-bottom: none;
+        }
+
+        .employee-id {
+            width: 100px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .employee-name {
+            flex: 1;
+            font-size: 16px;
+        }
+
+        .employee-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-edit {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-edit:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-remove {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .btn-remove:hover {
+            background-color: #c82333;
+        }
+
+        .btn-add {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .btn-add:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <ul class="sidebar-nav">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a href="orderManagement.html"><i class="fas fa-shopping-cart"></i><span>Order Management</span></a></li>
+            <li><a href="inventoryManagement.html"><i class="fas fa-box"></i><span>Inventory Management</span></a></li>
+            <li><a href="employeeManagement.html"><i class="fas fa-users"></i><span>Employee Management</span></a></li>
+            <li><a href="#"><i class="fas fa-heart"></i><span>Customer Relations</span></a></li>
+            <li><a href="#"><i class="fas fa-chart-bar"></i><span>Reports & Analytics</span></a></li>
+            <li><a href="#"><i class="fas fa-question-circle"></i><span>Help</span></a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="header">
+            <h1>Employee Management</h1>
+        </div>
+
+        <div class="employee-list">
+            <div class="employee-item">
+                <div class="employee-id">EMP001</div>
+                <div class="employee-name">John Smith</div>
+                <div class="employee-actions">
+                    <button class="btn btn-edit">Edit</button>
+                    <button class="btn btn-remove">Remove</button>
+                </div>
+            </div>
+            <div class="employee-item">
+                <div class="employee-id">EMP002</div>
+                <div class="employee-name">Sarah Johnson</div>
+                <div class="employee-actions">
+                    <button class="btn btn-edit">Edit</button>
+                    <button class="btn btn-remove">Remove</button>
+                </div>
+            </div>
+            <div class="employee-item">
+                <div class="employee-id">EMP003</div>
+                <div class="employee-name">Michael Brown</div>
+                <div class="employee-actions">
+                    <button class="btn btn-edit">Edit</button>
+                    <button class="btn btn-remove">Remove</button>
+                </div>
+            </div>
+            <div class="employee-item">
+                <div class="employee-id">EMP004</div>
+                <div class="employee-name">Emily Davis</div>
+                <div class="employee-actions">
+                    <button class="btn btn-edit">Edit</button>
+                    <button class="btn btn-remove">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-add">Add New Employee</button>
+    </main>
+</body>
+</html>
+<style>
+    .btn-add {
+        display: block;
+        margin: 20px auto;
+    }
+</style>
